@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<h1>Kiểm tra 3 số </h1>
+<br>Nhập số thứ nhất <input type="number" id="so1" placeholder="Nhập một số"> </br>
+<br>
+<br>Nhập số thứ hai <input type="number" id="so2" placeholder="Nhập một số"> </br>
+<br>
+<br>Nhập số thứ ba <input type="number" id="so3" placeholder="Nhập một số"> </br>
+<br>
+<button style="width:130px; height:30px" onclick="result()">Kiểm tra</button>
+<p id="result"></p>
+</body>
+<script>
+    function checkNum(num1, num2, num3) {
+        let min = num1;
+        if (num1 === num2 || num1 === num3 || num2 === num3) {
+            return document.getElementById("result").innerHTML = "Hãy nhập lại 3 số khác nhau";
+        }
+        if (num2 < num1 && num2 < num3) {
+            return "Số nhỏ nhất là: " + num2;
+        }
+        if (num3 < num1 && num3 < num2) {
+            return "Số nhỏ nhất là: " + num3;
+        }
+        return "Số nhỏ nhất là: " + min
+    }
+
+    function result() {
+        let num1 = +document.getElementById("so1").value
+        let num2 = +document.getElementById("so2").value
+        let num3 = +document.getElementById("so3").value
+        let result = checkNum(num1, num2, num3);
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
+</html>

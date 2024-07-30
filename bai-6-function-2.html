@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+<h1>Kiểm tra tính dương của một số </h1>
+<br>Nhập số muốn kiểm tra <input type="number" id="so" placeholder="Nhập một số"> </br>
+<br>
+<button style="width:130px; height:30px" onclick="check()">Kiểm tra</button>
+<p id="result"></p>
+</body>
+<script>
+    function checkNum(num) {
+        return num > 0 && num % 1 === 0;
+    }
+
+    function check() {
+        let so = document.getElementById("so").value;
+        let result = checkNum(so);
+        document.getElementById("result").innerHTML = result;
+    }
+
+</script>
+</html>

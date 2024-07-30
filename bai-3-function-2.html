@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giai thừa</title>
+</head>
+<h1 style="color:brown;">Tính giai thừa của một số nguyên</h1>
+<body>
+<br> Nhập số muốn tính giai thừa <input type="number" id="so" placeholder="Nhập 1 số"> </br>
+<br>
+<button style="width:130px; height:30px" onclick="giaithua()"> Kết quả</button>
+<br>
+<p id="ketqua"> Kết quả là: </p>
+</body>
+<script>
+    let result = 1;
+    let a = 1;
+
+    function giaithua() {
+        let so = +document.getElementById("so").value
+        if (so <= 0) {
+            document.getElementById("ketqua").innerHTML = "Số muốn tính giai thừa phải là số lớn hơn 0 ";
+        } else {
+            for (let i = 1; i <= so; i++) {
+                result = result * a;
+                a++;
+                document.getElementById("ketqua").innerHTML = " Kết quả giai thừa của " + so + " là: " + so + "! =" + result;
+            }
+            result = 1;
+            a = 1;
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<h1>Kiểm tra ký tự số </h1>
+<br>Nhập ký tự <input type="text" id="kytu" placeholder="Nhập một ký tự"> </br>
+<br>
+<button style="width:130px; height:30px" onclick="check()">Kiểm tra</button>
+<p id="result"></p>
+</body>
+<script>
+    function checkCharacter(num) {
+        return /^-?\d+(\.\d+)?$/.test(num);
+    }
+
+    function check() {
+        let kyTu = document.getElementById("kytu").value;
+        let result = checkCharacter(kyTu);
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
+</html>

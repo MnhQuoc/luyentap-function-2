@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+<h1>Đổi số 2 số </h1>
+<br>Nhập số thứ nhất <input type="number" id="so1" placeholder="Nhập một số"> </br>
+<br>
+<br>Nhập số thứ hai <input type="number" id="so2" placeholder="Nhập một số"> </br>
+<br>
+<button style="width:130px; height:30px" onclick="result()">Kiểm tra</button>
+<p id="result"></p>
+</body>
+<script>
+    function checkNum(num1, num2) {
+        let num = num1;
+        num1 = num2;
+        num2 = num;
+        return "Số thứ nhất là: " + num1 + "<br> Số thứ hai là: " + num2;
+    }
+
+    function result() {
+        let num1 = +document.getElementById("so1").value
+        let num2 = +document.getElementById("so2").value
+        let result = checkNum(num1, num2);
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
+</html>

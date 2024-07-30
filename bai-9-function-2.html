@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+<h1>Kiểm tra kí tự trong mảng </h1>
+<button style="width:200px; height:30px" onclick="check()">Tạo mảng để kiểm tra</button>
+<p id="banDau"></p>
+<p id="result"></p>
+</body>
+<script>
+
+    function taoMang() {
+        let arr = [];
+        let number = +prompt("Nhập số lượng phần tử của mảng");
+        for (let i = 0; i < number; i++) {
+            arr[i] = prompt("Nhập phần tử thứ " + (i + 1) + " của mảng");
+        }
+        return arr
+    }
+
+    let count = 0;
+
+    function check() {
+        let array = taoMang();
+        document.getElementById("banDau").innerText = "Mảng ban đầu là: " + array;
+        let check = prompt("Nhập ký tự muốn kiểm tra");
+        for (let i = 0; i < array.length; i++) {
+            if (check === array[i]) {
+                count++
+            }
+            if (count >= 1) {
+                return document.getElementById("result").innerHTML = "Ký tự: " + check + " lặp lại " + count + " lần";
+            } else {
+                return document.getElementById("result").innerHTML = "-1";
+            }
+        }
+    }
+
+</script>
+</html>

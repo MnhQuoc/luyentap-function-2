@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+<h1>Đảo ngược mảng số nguyên </h1>
+<button style="width:200px; height:30px" onclick="daoNguoc()">Tạo mảng và Đảo ngược</button>
+<p id="banDau"> Tạo Mảng </p>
+<p id="daoNguoc"> Tạo Mảng để đảo ngược </p>
+</body>
+<script>
+
+    function taoMang(){
+        let arr = [];
+        let number = +prompt("Nhập số lượng phần tử của mảng");
+        for (let i = 0; i < number; i++) {
+            arr[i] = prompt("Nhập phần tử thứ " + (i + 1) + " của mảng");
+        }
+        return arr
+    }
+
+    function daoNguoc(){
+        let result = taoMang();
+        document.getElementById("banDau").innerHTML = "Mảng ban đầu là: " + result;
+        let number = result.length;
+        let trungGian;
+        let string = "";
+        for (let j = 0; j < number / 2; j++) {
+            trungGian = result[j];
+            result[j] = result[number - (j + 1)];
+            result[number - (j + 1)] = trungGian;
+        }
+        for (let i = 0; i < number ; i++) {
+            string += result[i];
+        }
+        return document.getElementById("daoNguoc").innerHTML = "Mảng sau khi đảo ngược là: " + result;
+    }
+
+</script>
+</html>

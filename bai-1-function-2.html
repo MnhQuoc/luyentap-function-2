@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<h1>Tính bình phương </h1>
+<br>Bình phương của <input type="number" id="so" placeholder="Nhập một số"> </br>
+<br>
+<button style="width:130px; height:30px" onclick="result()">Tính</button>
+<p id="result"></p>
+</body>
+<script>
+    function square(num) {
+        return num * num;
+    }
+
+    function result() {
+        let input = document.getElementById("so").value;
+        let result = square(input);
+        document.getElementById("result").innerHTML = "Bình phương của " + input + " là " + result;
+    }
+</script>
+</html>

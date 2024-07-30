@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<h1>Tính P, S của hình tròn </h1>
+<br>Nhập bán kính của hình tròn <input type="number" id="so" placeholder="Nhập 1 số (đơn vị cm)"> </br>
+<br>
+<button style="width:130px; height:30px" onclick="result()">Tính</button>
+<p id="P"></p>
+<p id="S"></p>
+
+</body>
+<script>
+    const pi = 3.14;
+    function tinhS(num) {
+        return pi*num*num;
+    }
+    function tinhP(num) {
+        return 2*pi*num;
+    }
+
+    function result() {
+        let r = document.getElementById("so").value;
+        let S = tinhS(r);
+        let P = tinhP(r);
+        document.getElementById("P").innerHTML = "Chu vi của hình tròn bán kính " + r + " là " + P;
+        document.getElementById("S").innerHTML = "Diện tích của hình tròn bán kính " + r + " là " + S;
+    }
+</script>
+</html>
